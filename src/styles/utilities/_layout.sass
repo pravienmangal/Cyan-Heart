@@ -1,0 +1,255 @@
+// VARIABLES
+
+// WIDTHS
+$width-0: 0
+$width-1: 100%
+$width-1-2: 50%
+$width-1-3: 33.33%
+$width-2-3: 66.66%
+$width-1-4: 25%
+$width-3-4: 75%
+$width-1-5: 20%
+$width-2-5: 40%
+$width-3-5: 60%
+$width-4-5: 80%
+$width-1-6: 16.66%
+$width-5-6: 83.33%
+$width-1-7: 14.28%
+$width-2-7: 28.57%
+$width-3-7: 42.85%
+$width-4-7: 57.14%
+$width-5-7: 71.42%
+$width-6-7: 85.71%
+$width-1-8: 12.5%
+$width-3-8: 37.5%
+$width-5-8: 62.5%
+$width-7-8: 87.5%
+$width-1-9: 11.11%
+$width-2-9: 22.22%
+$width-4-9: 44.44%
+$width-5-9: 55.55%
+$width-7-9: 77.77%
+$width-8-9: 88.88%
+$width-1-10: 10%
+$width-3-10: 30%
+$width-7-10: 70%
+$width-9-10: 90%
+
+$widths: $width-0 $width-1 $width-1-2 $width-1-3 $width-2-3 $width-1-4 $width-3-4 $width-1-5 $width-2-5 $width-3-5 $width-4-5 $width-1-6 $width-5-6 $width-1-7 $width-2-7 $width-3-7 $width-4-7 $width-5-7 $width-6-7 $width-1-8 $width-3-8 $width-5-8 $width-7-8 $width-1-9 $width-2-9 $width-4-9 $width-5-9 $width-7-9 $width-8-9 $width-1-10 $width-3-10 $width-7-10 $width-9-10
+
+$names: '0' '1' '1-2' '1-3' '2-3' '1-4' '3-4' '1-5' '2-5' '3-5' '4-5' '1-6' '5-6' '1-7' '2-7' '3-7' '4-7' '5-7' '6-7' '1-8' '3-8' '5-8' '7-8' '1-9' '2-9' '4-9' '5-9' '7-9' '8-9' '1-10' '3-10' '7-10' '9-10'
+
+// GUTTERS
+$gutter-small: 20px
+$gutter-medium: 20px
+$gutter-large: 30px
+
+// HORIZONTAL PADDING
+$horizontal-padding-small: 20px
+$horizontal-padding-medium: 30px
+$horizontal-padding-large: 30px
+
+// CONTENT WIDTHS
+$content-width-small: 420px
+$content-width-medium: 984px
+$content-width-large: 1500px
+
+// MAX SITE WIDTHS
+$max-site-width-small: none
+$max-site-width-medium: none
+$max-site-width-large: 1920px
+
+// MIN SITE WIDTHS
+$min-site-width-small: 200px
+$min-site-width-medium: 768px
+$min-site-width-large: 1210px
+
+html
+	font-size: 10px
+	height: 100%
+
+body
+	position: relative
+	z-index: 0
+	margin: 0
+	width: 100%
+	height: 100%
+	+text-size-adjust(none)
+
+img
+	width: auto
+	height: auto
+	max-width: 100%
+	vertical-align: bottom
+	+box-sizing
+
+.wrap
+	position: relative
+	display: table
+	table-layout: fixed
+	margin: 0 auto
+	padding: 0
+	width: 100%
+	max-width: $max-site-width-small
+	min-width: $min-site-width-small
+	height: 100%
+	min-height: 100%
+	background: #FFF
+		
+.container
+	display: block
+	list-style: none
+	margin: 0 auto
+	padding: 0 $horizontal-padding-small
+	//max-width: $content-width-small
+
+.grid
+	display: block
+	list-style: none
+	margin: 0 0 0 (-$gutter-small)
+	padding: 0
+	justify-content: initial
+	+space-remove
+	+text-size-adjust
+
+	&:after
+		content: ""
+		display: block
+		font-size: 0
+		height: 0
+		overflow: hidden
+		visibility: hidden
+
+	& > *
+		margin: 0
+		padding: 0 0 0 $gutter-small
+		width: $width-1
+		max-width: 100%
+		text-align: left
+		-ms-text-justify: auto
+		text-justify: auto
+		word-wrap: break-word
+		-webkit-hyphens: manual
+		-moz-hyphens: manual
+		hyphens: manual
+		+inline-block(top)
+		+box-sizing
+		+space-reset
+		+text-size-adjust(none)
+
+.justify
+	text-align: justify
+	-ms-text-justify: distribute-all-lines
+	text-justify: distribute-all-lines
+	+gt-ie8
+		&:after
+			display: inline-block
+			vertical-align: bottom
+			width: 100%
+
+.reverse
+	direction: rtl
+
+	> *
+		direction: ltr
+
+.flex
+	display: -webkit-box
+	display: -moz-box
+	display: -ms-flexbox
+	display: -webkit-flex
+	display: flex
+	-webkit-flex-wrap: wrap
+	-ms-flex-wrap: wrap
+	flex-wrap: wrap
+	-webkit-flex-grow: 1
+	-ms-flex-flex-grow: 1
+	flex-grow: 1
+	-webkit-flex-shrink: 1
+	-ms-flex-flex-shrink: 1
+	flex-shrink: 1
+
+
+	> *
+		display: -webkit-box
+		display: -moz-box
+		display: -ms-flexbox
+		display: -webkit-flex
+		display: flex
+
+
+[class*=push-],
+[class*=pull-]
+	position: relative
+
++columns("", $names, $widths)
+
+
+head
+	font-family: false
+
+@media only screen
+	head
+		font-family: small
+
+
++addMediaQuery("only screen and (min-width:" + $min-site-width-medium + ")")
+
+	head
+		font-family: medium
+
+	.wrap
+		max-width: $max-site-width-medium
+
+	.container
+		max-width: $content-width-medium
+		padding: 0 $horizontal-padding-medium
+
+	.grid
+		margin-left: (-$gutter-medium)
+
+		> *
+			padding-left: $gutter-medium
+
+	+columns(medium, $names, $widths)
+
+
++addMediaQuery("only screen and (min-width:" + $min-site-width-large + ")")
+
+	head
+		font-family: large
+
+	.wrap
+		box-shadow: 0 0 10px rgba(#000, 0.2)
+		max-width: $max-site-width-large
+		+lt-ie9
+			min-width: 1160px
+
+	.container
+		max-width: $content-width-large
+		padding: 0 $horizontal-padding-large
+
+	.grid
+		margin-left: (-$gutter-large)
+
+		> *
+			padding-left: $gutter-large
+		
+
+	+columns(large, $names, $widths)
+
+
++addMediaQuery("only screen and (min-width:900px)")
+
+	.wrap
+		border-top-width: 92px
+
+
+@media print
+	
+	.wrap
+		display: block
+
+	@font-face
+		font-family: "reset"
+		src: url('') format('truetype')

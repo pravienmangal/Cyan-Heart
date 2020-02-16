@@ -1,14 +1,16 @@
 .header
-  padding: 0 20px
+  padding: 10px
   overflow: hidden
-  border-bottom: 1px solid #ccc
-  box-shadow: 0 0 16px 0 #909090
-  background: $brand-color
+  position: absolute
+  z-index: 2
 
 .header-content
   display: flex
   flex: 1
-  align-items: center   
+  align-items: center
+
+  a
+    padding: 0
 
 .logo
   // width: 20%
@@ -47,3 +49,8 @@
 
     &:hover
       color: $white
+
++addMediaQuery("only screen and (min-width:" + $min-site-width-large + ")")
+
+  .header
+    padding: 20px

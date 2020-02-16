@@ -1,0 +1,98 @@
+/* BANNER */
+
+.banner
+	position: relative
+	display: block
+	overflow: hidden
+	white-space: nowrap
+
+	&:after
+		content: ''
+		padding: 90% 0 0 0
+		width: 0
+		height: 0
+		visibility: hidden
+		+box-sizing
+		+inline-block(middle)
+	
+.banner-thin
+	position: relative
+	display: block
+	overflow: hidden
+	white-space: nowrap
+	
+	&:after
+		content: ''
+		padding: 80% 0 0 0
+		width: 0
+		height: 0
+		visibility: hidden
+		+box-sizing
+		+inline-block(middle)
+
+	.hero-title
+		white-space: normal
+
+.banner-image
+	position: absolute
+	top: 0
+	height: 100%
+	width: 100%
+	background-position: 50% 50%
+	background-repeat: no-repeat
+	background-color: $grey-light
+	background-image: url('/src/images/banner-1.png')
+	+bg-size
+	+transition(all, 0.9s)
+	
+
+.banner-inner
+	width: 100%
+	white-space: normal
+	+inline-block(middle)
+	
+.banner-content
+	position: relative
+	z-index: 100
+	display: table
+	//width: 65%
+	color: $white
+	background-color: rgba($grey, .8)
+	padding: 20px 15px
+
+	h2
+		font-family: $font-heading
+
+
+
+
++addMediaQuery("only screen and (min-width:" + $min-site-width-medium + ")")
+
+	.banner:after
+		padding: 45% 0 0 0
+
+	.banner-thin
+		&:after
+			padding: 40% 0 0 0
+
+	.banner-content
+		padding: 30px
+
+
++addMediaQuery("only screen and (min-width: 1160px)")
+
+	.banner-thin
+		&:after
+			padding: 15% 0 0 0
+
++addMediaQuery("only screen and (min-width:" + $min-site-width-large + ")")
+
+
+	.banner-thin
+		&:after
+			padding: 15% 0 0 0
+	
+
+@media print
+	.banner
+		display: none
