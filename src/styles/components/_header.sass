@@ -1,8 +1,10 @@
 .header
-  padding: 10px
+  padding: 10px 0
   overflow: hidden
   position: absolute
   z-index: 2
+  left: 0
+  right: 0
 
 .header-content
   display: flex
@@ -23,7 +25,7 @@
   text-align: left
   padding: 0 20px
   vertical-align: middle
-  color: $white
+  color: $primary
 
 .nav
   list-style: none
@@ -53,4 +55,4 @@
 +addMediaQuery("only screen and (min-width:" + $min-site-width-large + ")")
 
   .header
-    padding: 20px
+    padding: 20px 0

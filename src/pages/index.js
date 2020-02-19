@@ -4,13 +4,22 @@ import { Link } from "gatsby"
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/seo/seo"
 import Banner from "../components/Banner/Banner";
+import BannerImage from '../images/banner-1.png';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <Banner />
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage = () => {
+  const bannerTitle = `Cyan Heart's aim is to deliver Best quality First Aid training for all to spread the "Life Saving Knowledge and Skill" to everyone.`;
+  const linkTitle = 'Anout Cyan Heart';
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <Banner
+        bannerImage={BannerImage}
+        title={bannerTitle}
+        link={linkTitle}
+      />
+      <Link to="/page-2/">Go to page 2</Link>
+    </Layout>
+  );
+}
 
 export default IndexPage
