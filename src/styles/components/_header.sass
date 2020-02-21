@@ -32,21 +32,56 @@
 .header
   right: 0
 
-.logo
-	display: block
-	// width: 179px
-	// height: 70px
-	//margin-right: 12px
-	// background: url('../images/limetrust-logo-sm.png') no-repeat
-	text-align: right
-	float: right
-	z-index: 999
-	position: relative
-  color: $primary
+  .logo
+    display: block
+    // width: 179px
+    // height: 70px
+    //margin-right: 12px
+    // background: url('../images/limetrust-logo-sm.png') no-repeat
+    text-align: right
+    float: right
+    z-index: 999
+    position: relative
+    color: $primary
 
 .header-container
   display: flex
   justify-content: space-between
+  align-items: center
+
+  .nav-main-btn
+    position: relative
+    z-index: 500
+    float: left
+    // margin: 7px 0 0
+    width: 42px
+    height: 42px
+    font-size: 21px
+    // line-height: 30px
+    text-align: center
+    color: #FFF
+    overflow: hidden
+    cursor: pointer
+    border-radius: 5px
+    //background: #000
+    color: #000
+    +inline-block(middle)
+    +user-select
+
+    &:before
+      content: '\f0c9'
+      display: block
+      // margin: 0 0 10px 0
+      // padding: 15px 0
+      color: $white
+      //background: $black 
+      font-family: $font-awesome
+      font-weight: normal
+      font-size: 30px
+      text-align: left
+
+.nav-container
+  display: none
 
 .nav-main
 	position: relative
@@ -67,9 +102,6 @@
 		display: block
 		text-decoration: none
 		text-align: left
-
-.nav-main
-  display: none
 
 /* Keyframes */
 
@@ -172,25 +204,25 @@
     align-items: center
     justify-content: flex-end
 
-	.nav-main
-		display: block
+  .nav-main
+    display: block
 
-  a
-    padding: 5px 20px
-    color: $white
-    font-family: $font-heading
+    a
+      padding: 5px 20px
+      color: $white
+      font-family: $font-heading
 
-		ul
-			display: inline-block
+    ul
+      display: inline-block
 
-		li
-			position: relative
-			text-align: left
-			font-family: $font-heading
-			+inline-block
-			+space-reset(1.8, 1.4)
+    li
+      position: relative
+      text-align: left
+      font-family: $font-heading
+      +inline-block
+      +space-reset(1.8, 1.4)
 
-		a
+    a
       +transition(all, 2s)
 
       &:after
@@ -219,7 +251,7 @@
           -o-animation: fill 1s forwards
           animation: fill 1s forwards
           opacity: 1
-  
+
 
 @media print
 	

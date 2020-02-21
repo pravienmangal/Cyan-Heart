@@ -15,6 +15,7 @@ const Header = ({ siteTitle }) => {
   return (
     <header className="header">
       <div className="header-container container">
+        <label className="nav-main-btn" htmlFor="nav-expand">Menu</label>
         <Link to="/" className="logo">
           {siteTitle}
         </Link>
