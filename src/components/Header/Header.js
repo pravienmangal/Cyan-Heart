@@ -1,6 +1,6 @@
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import React from 'react'
 import Nav from '../Nav/Nav'
 
 const Header = ({ siteTitle }) => {
@@ -12,14 +12,29 @@ const Header = ({ siteTitle }) => {
     { title: "Contact Us", url: "/page-2/" }
   ];
 
+  const [isMenuOpen, setIsenuOpen] = useState(false);
+
+  const menuClickHandler = () => {
+    setIsenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="header">
       <div className="header-container container">
-        <label className="nav-main-btn" htmlFor="nav-expand">Menu</label>
+        <label
+          className={isMenuOpen ? "nav-main-btn close" : "nav-main-btn"}
+          htmlFor="nav-expand"
+          onClick={menuClickHandler}
+        >
+          Menu
+        </label>
         <Link to="/" className="logo">
           {siteTitle}
         </Link>
-        <Nav options={navOptions} />
+        <Nav
+          options={navOptions}
+          isNavOpen={isMenuOpen}
+        />
       </div>
     </header>
   );
