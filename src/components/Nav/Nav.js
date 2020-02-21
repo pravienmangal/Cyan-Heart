@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import clsx from 'clsx';
 
-const Nav = ({ options }) => {
+const Nav = ({ options, isNavOpen }) => {
+  console.log('isNavOpen', isNavOpen);
   return (
-    <div className="nav-container">
+    <div className={clsx("nav-container", isNavOpen ? "open" : "")}>
       <nav className="nav-main" tabIndex="-1">
         <ul>
           {options &&
@@ -31,7 +33,8 @@ Nav.propTypes = {
       title: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired
     }).isRequired
-  )
+  ),
+  isNavOpen: PropTypes.bool.isRequired
 };
 
 export default Nav;
