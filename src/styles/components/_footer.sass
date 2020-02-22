@@ -1,0 +1,150 @@
+/* FOOTER */
+
+.footer
+	position: relative
+	display: block
+	clear: both
+	margin: 0
+	color: $body-color
+	background: $secondary
+	// background: rgba($grey-light-mid, .3)
+	+bg-size
+
+	&:after,
+	&:before
+		content: ''
+		display: block
+		clear: both
+		height: 0
+		max-height: 0
+		font-size: 0
+		line-height: 0
+		overflow: hidden
+		visibility: hidden
+
+.footer-container
+  padding: 45px $horizontal-padding-large
+  color: $white
+
+.footer-bottom
+	margin-top: 15px
+
+.copyright
+	font-size: 12px
+
+.footer-links
+	text-align:  center
+	font-size: 12px
+	padding: 0
+	vertical-align: bottom
+	max-width: 275px
+	margin: 0 auto
+
+	li
+		list-style: none
+		display: inline-block
+		margin: 0 0 15px 15px
+
+		&:after
+			content: '|'
+			margin-left: 15px
+
+		&:first-child,
+		&:last-child
+			&:after
+				content: none
+
+	a
+		color: $grey
+
+		&:hover
+			color: $grey-light-mid
+
+.social
+	text-align: center
+	margin-bottom: 40px
+
+	ul	
+		margin: 0 0 0 -15px
+		padding: 0 0 0 15px
+		
+		li
+			list-style: none
+			display: inline-block
+			margin-right: 15px
+
+		a
+			text-decoration: none
+			position: relative
+			margin-right: 30px
+
+			&:before
+				position: absolute
+				top: 0
+				left: 0
+				font-family: 'FontAwesome'
+				height: 30px
+				width: 30px
+				color: $white
+				// color: $body-color
+				font-size: 30px
+				text-align: center
+				+transition
+
+			&:hover:before,
+			&:focus:before
+				color: $grey
+
+		.twitter-link
+			&:before
+				content: $twitter-icon
+
+		.facebook-link
+			&:before
+				content: $facebook-icon
+
+		.linkedin-link
+			&:before
+				content: $linkedin-icon
+
+
++addMediaQuery("only screen and (min-width:" + $min-site-width-medium + ")")
+	
+	.footer-bottom
+		margin-top: 25px
+
+
+	.social
+		display: block
+		float: right
+		margin-bottom: 0
+
+	.footer-links-content
+		vertical-align: bottom
+
+	.footer-links
+		text-align: left
+		max-width: inherit 
+
+		li
+			margin: 0 5px 0 0
+
+			&:after
+				margin-left: 5px
+
+			&:first-child
+				&:after
+					content: '|'
+
+
++addMediaQuery("only screen and (min-width:" + $min-site-width-large + ")")
+
+	.footer-container
+		padding: 65px $horizontal-padding-large
+
+
+@media print
+	
+	.footer
+		display: none
+	

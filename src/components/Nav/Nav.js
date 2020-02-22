@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import clsx from 'clsx';
 
 const Nav = ({ options, isNavOpen }) => {
-  console.log('isNavOpen', isNavOpen);
   return (
     <div className={clsx("nav-container", isNavOpen ? "open" : "")}>
       <nav className="nav-main" tabIndex="-1">
