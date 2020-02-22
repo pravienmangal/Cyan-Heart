@@ -8,7 +8,7 @@ const Header = ({ siteTitle }) => {
   const navOptions = [
     { title: "About Us", url: "/page-2/" },
     { title: "Our Courses", url: "/page-2/" },
-    { title: "Gallery", url: "/page-2/" },
+    { title: "FAQs", url: "/page-2/" },
     { title: "Contact Us", url: "/page-2/" }
   ];
 
