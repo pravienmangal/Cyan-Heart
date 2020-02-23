@@ -50,7 +50,81 @@ h3
 .intro-content
 	padding-top: 25px
 	padding-bottom: 25px
-	text-align: center		
+	margin: 0 auto
+	text-align: center
+
+blockquote
+	p
+		font-size: 32px	
+
+.quote-content
+	padding: 50px 20px 50px
+	max-width: 800px
+	margin: 0 auto
+
+	p
+		margin: 0
+
+.quotation
+	text-align: center
+	position: relative
+
+	p
+		font-size: 26px
+		line-height: 1.1
+		position: relative
+
+		&:before,
+		&:after
+			font-family: $font-awesome
+			display: block
+			text-align: center
+			width: 40px
+			height: auto
+			margin: 0 auto
+
+		&:before
+			content: $quote-left
+			margin: 0 auto 15px
+
+		&:after
+			content: $quote-right
+			margin: 30px auto 0
+
+.slick-initialized .slick-slide
+	padding-top: 30px
+	padding-bottom: 
+	
+	.quote-item
+		height: 420px
+
+	.yellow
+		background: #b7b300
+
+	.gray
+		background: #e6e7e8
+
+	.green
+		background: #566530
+
+.carousel-container
+	.slick-next,
+	.slick-prev
+		top: 58%
+
+	.slick-next
+		right: 5px
+
+	.slick-prev
+		left: 5px
+		z-index: 1
+
+	.slick-dots
+		bottom: 15px
+		z-index: 1
+
+		li button:before
+			font-size: 12px
 
 +addMediaQuery("only screen and (min-width:" + $min-site-width-large + ")")
 
@@ -60,4 +134,18 @@ h3
 
 	.intro-content
 		padding: 40px 0
-		max-width: 600px	
+		max-width: 600px
+		
+	.quote-content
+		padding: 100px 0 70px
+
+	.slick-initialized .slick-slide
+		.quote-item
+			height: 400px
+
+	.carousel-container
+		.slick-next
+			right: 25px
+
+		.slick-prev
+			left: 25px
