@@ -10,19 +10,12 @@ const Carousel = ({ children }) => {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000
   };
   return (
     <Slider {...settings}>
-      {/* <div>
-        <h3>1</h3>
-      </div>
-      <div>
-        <h3>2</h3>
-      </div>
-      <div>
-        <h3>3</h3>
-      </div> */}
       {children}
     </Slider>
   );

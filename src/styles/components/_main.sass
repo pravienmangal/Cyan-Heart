@@ -58,7 +58,7 @@ blockquote
 		font-size: 32px	
 
 .quote-content
-	padding: 100px 0 70px
+	padding: 50px 20px 50px
 	max-width: 800px
 	margin: 0 auto
 
@@ -93,7 +93,10 @@ blockquote
 
 .slick-initialized .slick-slide
 	padding-top: 30px
-	padding-bottom: 30px
+	padding-bottom: 
+	
+	.quote-item
+		height: 420px
 
 	.yellow
 		background: #b7b300
@@ -104,6 +107,25 @@ blockquote
 	.green
 		background: #566530
 
+.carousel-container
+	.slick-next,
+	.slick-prev
+		top: 58%
+
+	.slick-next
+		right: 5px
+
+	.slick-prev
+		left: 5px
+		z-index: 1
+
+	.slick-dots
+		bottom: 15px
+		z-index: 1
+
+		li button:before
+			font-size: 12px
+
 +addMediaQuery("only screen and (min-width:" + $min-site-width-large + ")")
 
 	.btn
@@ -112,4 +134,18 @@ blockquote
 
 	.intro-content
 		padding: 40px 0
-		max-width: 600px	
+		max-width: 600px
+		
+	.quote-content
+		padding: 100px 0 70px
+
+	.slick-initialized .slick-slide
+		.quote-item
+			height: 400px
+
+	.carousel-container
+		.slick-next
+			right: 25px
+
+		.slick-prev
+			left: 25px

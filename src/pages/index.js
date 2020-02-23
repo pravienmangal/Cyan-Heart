@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import clsx from 'clsx'
 
 import Layout from '../components/Layout/Layout'
 import SEO from '../components/seo/seo'
@@ -33,13 +33,13 @@ const IndexPage = () => {
     }
   ];
 
-  const renderColorName = id => {
-    switch (id) {
-      case 1:
+  const renderColorName = i => {
+    switch (i) {
+      case 0:
         return 'yellow'
-      case 2:
+      case 1:
         return 'gray'
-      case 3:
+      case 2:
         return 'green'
     }
   };
@@ -56,16 +56,17 @@ const IndexPage = () => {
         title={introTitle}
         description={introDesc}
       />
-      <Carousel>
-        {quotes.map(quote => {
-          return (
-            <div className={renderColorName(quote.id)} key={quote.id}>
-              <Blockquote quote={quote.quote} author={quote.author} />
-            </div>
-          );
-        })}
-      </Carousel>
-      <Link to="/page-2/">Go to page 2</Link>
+      <div className="carousel-container">
+        <Carousel>
+          {quotes.map((quote, index) => {
+            return (
+              <div className={clsx("quote-item", renderColorName(index))} key={quote.id}>
+                <Blockquote quote={quote.quote} author={quote.author} />
+              </div>
+            );
+          })}
+        </Carousel>
+      </div>
     </Layout>
   );
 }
