@@ -1,8 +1,8 @@
 .App
   text-align: center
 
-ul
-  list-style: none
+// ul
+//   list-style: none
 
 a
   text-decoration: none
@@ -99,13 +99,13 @@ blockquote
 		height: 420px
 
 	.yellow
-		background: #b7b300
+		background: $yellow
 
 	.gray
-		background: #e6e7e8
+		background: $grey-mid
 
 	.green
-		background: #566530
+		background: $green
 
 .carousel-container
 	.slick-next,
@@ -125,6 +125,60 @@ blockquote
 
 		li button:before
 			font-size: 12px
+
+/**** BOXES ****/
+
+.box
+	display: block
+	white-space: nowrap
+	width: 100%
+	overflow: hidden
+	position: relative
+	vertical-align: middle
+	background: 50% 50% no-repeat
+	+bg-size
+
+	&:after
+		content: ''
+		display: inline-block
+		vertical-align: inherit
+		width: 0
+		height: 0
+		overflow: hidden
+		padding: 100% 0 0
+
+.box-text
+	display: block
+	white-space: nowrap
+	width: 100%
+	overflow: hidden
+	position: relative
+	vertical-align: middle
+	background: 50% 50% no-repeat
+	background-color: $grey-mid
+	+bg-size	
+
+	.box-content
+		padding: 30px $horizontal-padding-small
+
+.text-container
+	order: 2
+
+.box-content
+	padding: 30px 10px
+	width: 100%
+	position: relative
+	white-space: normal
+	//z-index: 3
+	display: inline-block
+	vertical-align: middle
+	+box-sizing
+	
+	.h1
+		margin: 0 0 25px 0
+
+	p
+		margin: 0 0 40px 0
 
 +addMediaQuery("only screen and (min-width:" + $min-site-width-large + ")")
 
@@ -149,3 +203,48 @@ blockquote
 
 		.slick-prev
 			left: 25px
+
+	.text-container
+		order: 1		
+
+	.box-text
+		display: block
+		white-space: nowrap
+		width: 100%
+		overflow: hidden
+		position: relative
+		vertical-align: middle
+		background: 50% 50% no-repeat
+		background-color: $grey-mid
+		+bg-size
+
+		&:after
+			content: ''
+			display: inline-block
+			vertical-align: inherit
+			width: 0
+			height: 0
+			overflow: hidden
+			padding: 100% 0 0
+
+		.box-content
+			padding: 30px $horizontal-padding-large
+
+	.white-content
+		padding: 60px $horizontal-padding-large
+
+	.box-width-left
+		max-width: 660px
+		margin: 0 0 0 auto
+
+	.box-content
+		padding: 30px
+	
+		p
+			margin: 0 0 40px 0
+
+	.image-container
+		order: 2
+
+		.box
+			position: unset	
