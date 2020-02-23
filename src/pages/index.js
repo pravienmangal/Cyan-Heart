@@ -7,13 +7,16 @@ import Banner from '../components/Banner/Banner';
 import Intro from '../components/Intro/Intro'
 import Carousel from '../components/Carousel/Carousel'
 import Blockquote from '../components/BlockQuotes/Blockquotes'
-import BannerImage from '../images/banner-1.png';
+import TextImagePair from '../components/TextImagePair/TextImagePair'
+import bannerImage from '../images/banner-1.png';
+import SpecialistList from '../tempContent/SpecialistList'
 
 const IndexPage = () => {
   const bannerTitle = `Cyan Heart's aim is to deliver Best quality First Aid training for all to spread the "Life Saving Knowledge and Skill" to everyone.`;
   const linkTitle = 'Anout Cyan Heart';
   const introTitle = 'We always deliver best quality First Aid training for all';
   const introDesc = `Our aimis to deliver Best quality First Aid training for all to spread the "Life Saving Knowledge and Skill" to everyone. We aim to fulfil our client's First Aid training requirement to the best.`;
+  const textImageTitle = 'We Specialized in delivering';
 
   const quotes = [
     {
@@ -48,7 +51,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Banner
-        bannerImage={BannerImage}
+        bannerImage={bannerImage}
         title={bannerTitle}
         link={linkTitle}
       />
@@ -56,6 +59,12 @@ const IndexPage = () => {
         title={introTitle}
         description={introDesc}
       />
+      <TextImagePair
+        title={textImageTitle}
+        image={bannerImage}
+      >
+        <SpecialistList />
+      </TextImagePair>
       <div className="carousel-container">
         <Carousel>
           {quotes.map((quote, index) => {
