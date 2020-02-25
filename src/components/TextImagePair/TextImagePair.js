@@ -17,7 +17,7 @@ const TextImagePair = ({ title, children, image }) => {
       <div className="image-container large-span-1-2 fade-in-up">
         <div className="box">
           <div className="lazy-load" style={{
-            backgroundImage: `url('${image}')`,
+            backgroundImage: `url('${image}')`
           }}></div>
         </div>
       </div>

@@ -8,7 +8,9 @@ import Intro from '../components/Intro/Intro'
 import Carousel from '../components/Carousel/Carousel'
 import Blockquote from '../components/BlockQuotes/Blockquotes'
 import TextImagePair from '../components/TextImagePair/TextImagePair'
+import Callout from '../components/Callout/Callout'
 import bannerImage from '../images/banner-1.png';
+import cprImage from '../images/cpr-2.jpg'
 import SpecialistList from '../tempContent/SpecialistList'
 
 const IndexPage = () => {
@@ -61,10 +63,13 @@ const IndexPage = () => {
       />
       <TextImagePair
         title={textImageTitle}
-        image={bannerImage}
+        image={cprImage}
       >
         <SpecialistList />
       </TextImagePair>
+      <div className="callout-content">
+        <Callout />
+      </div>
       <div className="carousel-container">
         <Carousel>
           {quotes.map((quote, index) => {
