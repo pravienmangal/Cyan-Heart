@@ -55,7 +55,8 @@ const IndexPage = () => {
       <Banner
         bannerImage={bannerImage}
         title={bannerTitle}
-        link={linkTitle}
+        linkName={linkTitle}
+        link="/about-us"
       />
       <Intro
         title={introTitle}

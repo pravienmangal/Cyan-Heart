@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from "prop-types"
+import { Link } from 'gatsby'
 
-const Banner = ({ bannerImage, title, link }) => {
+const Banner = ({ bannerImage, title, linkName, link, thin }) => {
   return (
-    <div className="banner">
+    <div className={thin ? "banner-thin" : "banner"}>
       <div className="banner-image shadow-box lazy-image">
         <div className="lazy-load" style={{
           backgroundImage: `url('${bannerImage}')`,
@@ -12,7 +13,7 @@ const Banner = ({ bannerImage, title, link }) => {
           <div className="hero-title fade-in-up">
             <h1>{title}</h1>
             {link && (
-              <a href="#" className="btn">{link}</a>
+              <Link to={link} className="btn">{linkName}</Link>
             )}
           </div>
         </div>
@@ -24,13 +25,17 @@ const Banner = ({ bannerImage, title, link }) => {
 Banner.propTypes = {
   bannerImage: PropTypes.string,
   title: PropTypes.string,
-  link: PropTypes.string
+  linkname: PropTypes.string,
+  link: PropTypes.string,
+  thin: PropTypes.boolean
 }
 
 Banner.defaultProps = {
   bannerImage: '',
   title: '',
-  link: ''
+  linkName: '',
+  link: '',
+  thin: false
 }
 
 
