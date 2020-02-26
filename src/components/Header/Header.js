@@ -6,7 +6,7 @@ import Nav from '../Nav/Nav'
 const Header = ({ siteTitle }) => {
 
   const navOptions = [
-    { title: "About Us", url: "/page-2/" },
+    { title: "About Us", url: "/about-us" },
     { title: "Our Courses", url: "/page-2/" },
     { title: "FAQs", url: "/page-2/" },
     { title: "Contact Us", url: "/page-2/" }
