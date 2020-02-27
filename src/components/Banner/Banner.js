@@ -27,7 +27,7 @@ Banner.propTypes = {
   title: PropTypes.string,
   linkname: PropTypes.string,
   link: PropTypes.string,
-  thin: PropTypes.boolean
+  thin: PropTypes.bool
 }
 
 Banner.defaultProps = {
