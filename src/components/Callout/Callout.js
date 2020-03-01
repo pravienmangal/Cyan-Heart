@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Callout = ({ options }) => {
-  console.log("options", options);
   return (
     <div className="container">
       <div className="grid flex">

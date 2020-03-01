@@ -1,0 +1,121 @@
+/*** ACORDIAN ***/
+
+.accordion-item 
+
+  dt
+    position: relative
+    padding: 10px 50px 10px 10px
+    cursor: pointer
+    background: $row-odd
+    +transition(all, .2s, ease)
+    
+    h3
+      font-size: 1.8rem
+      margin: 0
+      font-weight: 600
+      font-family: $font-heading
+      color: $body-color
+    
+    &:after
+      content: ''
+      position: absolute
+      top: 5px
+      right: 20px
+      width: 25px
+      height: 25px
+      color: $red
+      transform: rotate(0deg)
+      +transition(transform, .2s, ease)
+      +bg-size(contain)
+      +gt-ie8
+        background: svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 25" width="43" height="25"><polygon fill="' + $primary + '" points="21.5 24.62 0.09 3.21 2.91 0.38 21.5 18.96 40.09 0.38 42.91 3.21 21.5 24.62"/></svg>') 50% 50% no-repeat
+
+  dd
+    position: relative
+    padding: 0 10px
+    background: $row-odd
+    max-height: 100rem
+    max-height: 0
+    overflow: hidden
+    text-transform: cubic-bezier(0.95, 0.05, 0.795, 0.035)
+    transition-duration: 0.5s
+    transition-property: max-height
+    z-index: 1
+    position: relative
+
+    .inner-content
+      opacity: 0
+      transform: translateY(-1rem)
+      transition-timing-function: ease-in-out
+      transition-duration: 0.1s
+      transition-property: opacity, transform
+      transition-delay: 0.2s
+
+  &:nth-of-type(even)
+    dt, dd
+      background: $row-even
+
+
+  &.collapse
+    border-bottom: none
+    margin-bottom: 0
+
+    h3
+      color: $body-color
+    
+    dt:after
+      transform: rotate(180deg)
+
+    dd
+      opacity: 1
+      max-height: 100rem
+      transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22)
+      transition-duration: 0.5s
+      transition-property: max-height
+
+      .inner-content
+        opacity: 1
+        transform: translateY(0)
+        transition-delay: 0.2s
+        transition-timing-function: ease-in-out
+        transition-duration: 0.2s
+        transition-property: opacity, transform
+
+
++addMediaQuery("only screen and (min-width:" + $min-site-width-medium + ")")
+
+  .accordion-item
+    dt
+      padding: 25px 65px 25px 25px
+
+      h3
+        font-size: 2.4rem
+
+      &:after
+        width: 43px
+        height: 25px
+        top: 25px
+        right: 40px
+
+    dd
+      padding: 0px 40px 0px 25px
+
+    &.collapse
+      dt:after
+        width: 43px
+        top: 25px
+        right: 40px
+        font-size: 46px
+
+
+
++addMediaQuery("only screen and (min-width:" + $min-site-width-large + ")")
+
+
+	dt
+		padding: 25px 40px
+
+	dd
+		font-size: 24px
+		padding: 0 40px 0 25px
+
