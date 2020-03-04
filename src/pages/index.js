@@ -7,7 +7,7 @@ import Banner from '../components/Banner/Banner';
 import Intro from '../components/Intro/Intro'
 import Carousel from '../components/Carousel/Carousel'
 import Blockquote from '../components/BlockQuotes/Blockquotes'
-import TextImagePair from '../components/TextImagePair/TextImagePair'
+import DuoBox from '../components/DuoBox/DuoBox'
 import bannerImage from '../images/banner-1.png';
 import cprImage from '../images/cpr-2.jpg'
 import SpecialistList from '../tempContent/SpecialistList'
@@ -61,12 +61,12 @@ const IndexPage = () => {
         title={introTitle}
         description={introDesc}
       />
-      <TextImagePair
+      <DuoBox
         title={textImageTitle}
         image={cprImage}
       >
         <SpecialistList />
-      </TextImagePair>
+      </DuoBox>
       <div className="carousel-container">
         <Carousel>
           {quotes.map((quote, index) => {
