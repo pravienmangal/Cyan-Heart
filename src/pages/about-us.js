@@ -3,7 +3,7 @@ import Layout from "../components/Layout/Layout"
 import SEO from "../components/seo/seo"
 import Banner from '../components/Banner/Banner'
 import Intro from '../components/Intro/Intro'
-import TextImagePair from '../components/TextImagePair/TextImagePair'
+import DuoBox from '../components/DuoBox/DuoBox'
 import SpecialistList from '../tempContent/SpecialistList'
 import cprImage from '../images/cpr-2.jpg'
 
@@ -19,12 +19,12 @@ const AboutUsPage = () => (
       title="This is About us page"
       description="Here more text will be added and it will be a paragraph or multiple paragraphs"
     />
-    <TextImagePair
+    <DuoBox
       title="This is About us page"
       image={cprImage}
     >
       <SpecialistList />
-    </TextImagePair>
+    </DuoBox>
   </Layout>
 )
 

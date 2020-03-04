@@ -35,6 +35,7 @@ h3
 	color: $white
 	border: 2px solid $primary
 	padding: 5px 10px
+	cursor: pointer
 	+font-size($txt-small, $line-height)
 	+transition(all, .8s)
 
@@ -43,6 +44,11 @@ h3
 		border: 2px solid $primary
 		background: transparent
 		+transition(all, .8s)
+
+	&:disabled
+		color: $grey
+		border: 2px solid $grey
+		background: rgba($primary, 0.1)
 
 .intro-content
 	padding-top: 25px
@@ -214,6 +220,38 @@ blockquote
 .white-content
 	h2
 		color: $secondary
+
+.form-container,
+form,
+	display: flex
+	flex: 1
+	flex-direction: column
+
+.right-content
+	display: flex
+	flex: 1
+	align-items: center
+	padding: 40px 20px
+	background: rgba($primary, 0.3)
+
+.text-input
+	display: flex
+	flex: 1
+	flex-direction: column
+	margin-bottom: 20px
+
+	input,
+	textarea
+		padding: 7px 10px
+		border: 0
+
+		&.has-error
+			border: 1px solid $red
+			background: rgba($red, 0.3)
+
+.error-message
+	color: $red
+	margin: 0
 
 +addMediaQuery("only screen and (min-width:" + $min-site-width-large + ")")	
 

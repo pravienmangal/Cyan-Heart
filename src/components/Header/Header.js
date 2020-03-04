@@ -9,7 +9,7 @@ const Header = ({ siteTitle }) => {
     { title: "About Us", url: "/about-us" },
     { title: "Our Courses", url: "/our-courses" },
     { title: "FAQs", url: "/faq" },
-    { title: "Contact Us", url: "/page-2/" }
+    { title: "Contact Us", url: "/contact-us" }
   ];
 
   const [isMenuOpen, setIsenuOpen] = useState(false);
