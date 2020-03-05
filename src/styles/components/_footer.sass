@@ -42,8 +42,9 @@
 
 	li
 		list-style: none
-		display: inline-block
-		margin: 0 0 15px 15px
+		display: inline-flex
+		align-items: center
+		// margin: 0 0 15px 15px
 
 		&:after
 			content: '|'
@@ -55,10 +56,17 @@
 				content: none
 
 	a
-		color: $grey
+		width: 125px
+		height: 40px
+		display: inline-flex
 
-		&:hover
-			color: $grey-light-mid
+	li:nth-child(2) a
+		background: url('../images/fofato.png') 50% 50% no-repeat
+		+bg-size(contain)
+
+	li:nth-child(3) a
+		background: url('../images/faib.jpg') 50% 50% no-repeat
+		+bg-size(contain)
 
 .social
 	text-align: center
@@ -125,8 +133,12 @@
 	.footer-links
 		text-align: left
 		max-width: inherit 
+		display: flex
+		align-items: center
 
 		li
+			display: flex
+			align-items: center
 			margin: 0 5px 0 0
 
 			&:after

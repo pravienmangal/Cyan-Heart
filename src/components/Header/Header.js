@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import Nav from '../Nav/Nav'
 
-const Header = ({ siteTitle }) => {
+const Header = () => {
 
   const navOptions = [
     { title: "About Us", url: "/about-us" },
@@ -28,9 +28,7 @@ const Header = ({ siteTitle }) => {
         >
           Menu
         </label>
-        <Link to="/" className="logo">
-          {siteTitle}
-        </Link>
+        <Link to="/" className="logo"></Link>
         <Nav
           options={navOptions}
           isNavOpen={isMenuOpen}
