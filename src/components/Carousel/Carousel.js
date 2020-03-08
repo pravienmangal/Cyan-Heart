@@ -1,7 +1,6 @@
 import React from 'react'
 import Slider from 'react-slick'
 import PropType from 'prop-types'
-import "../../styles/slick"
 import "../../styles/slick.css"
 import "../../styles/slick-theme.css"
 
