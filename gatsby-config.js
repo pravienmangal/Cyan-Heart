@@ -22,14 +22,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-json`,
-      options: {
-        options: {
-          typeName: ({ node, object, isArray }) => object.level,
-        },
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `cms`,
