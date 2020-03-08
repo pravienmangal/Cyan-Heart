@@ -13,4 +13,3 @@ collections:
     identifier_field: name
     fields:
       - { label: bannerTitle, name: Banner title, widget: "string", required: true }
-      - { label: bannerImage, name: Banner image, widget: "image", required: true }
