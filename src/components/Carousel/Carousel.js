@@ -4,9 +4,6 @@ import PropType from 'prop-types'
 import "../../styles/slick.css"
 import "../../styles/slick-theme.css"
 
-// import "slick-carousel/slick/slick.css"
-// import "slick-carousel/slick/slick-theme.css"
-
 const Carousel = ({ children }) => {
   const settings = {
     dots: true,

@@ -8,6 +8,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-json`,
+    `gatsby-plugin-react-svg`,
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
@@ -26,6 +27,14 @@ module.exports = {
       options: {
         options: {
           typeName: ({ node, object, isArray }) => object.level,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-svg`,
+      options: {
+        rule: {
+          include: `/assets/`,
         },
       },
     },
