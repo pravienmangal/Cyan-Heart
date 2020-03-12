@@ -14,7 +14,7 @@ import SpecialistList from '../tempContent/SpecialistList'
 
 const IndexPage = () => {
   const bannerTitle = `Cyan Heart's aim is to deliver Best quality First Aid training for all to spread the "Life Saving Knowledge and Skill" to everyone.`;
-  const linkTitle = 'Anout Cyan Heart';
+  const linkTitle = 'About Cyan Heart';
   const introTitle = 'We always deliver best quality First Aid training for all';
   const introDesc = `Our aimis to deliver Best quality First Aid training for all to spread the "Life Saving Knowledge and Skill" to everyone. We aim to fulfil our client's First Aid training requirement to the best.`;
   const textImageTitle = 'We Specialized in delivering';

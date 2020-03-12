@@ -8,7 +8,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-json`,
-    `gatsby-plugin-react-svg`,
+    `gatsby-plugin-netlify-identity-widget`,
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
@@ -31,18 +31,16 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-react-svg`,
-      options: {
-        rule: {
-          include: `/assets/`,
-        },
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `cms`,
         path: `${__dirname}/_cms-data`
+      },
+    },
+    {
+      resolve: `gatsby-plugin-netlify-identity-widget`,
+      options: {
+        container: `#netlify-modal`,
       },
     },
     `gatsby-transformer-sharp`,
