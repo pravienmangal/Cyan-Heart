@@ -8,7 +8,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-json`,
-    `gatsby-plugin-netlify-identity-widget`,
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
@@ -38,10 +37,16 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-netlify-identity`,
+      options: {
+        url: `https://sharp-saha-d78bb2.netlify.com/`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-netlify-identity-widget`,
       options: {
-        container: `#netlify-modal`,
-      },
+        container: `#netlify-modal`
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

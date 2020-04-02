@@ -8,6 +8,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
+import IdentityModal, { useIdentityContext } from 'react-netlify-identity-widget'
+import 'react-netlify-identity-widget/styles.css'
 
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
@@ -23,11 +25,18 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const identity = useIdentityContext()
+  const [dialog, setDialog] = React.useState(false)
+  // const name =
+  //   (identity && identity.user && identity.user.user_metadata && identity.user.user_metadata.name) || "NoName"
+
+  const isLoggedIn = identity && identity.isLoggedIn
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div>
         <main>{children}</main>
+        <IdentityModal showDialog={dialog} onCloseDialog={() => setDialog(false)} />
         <Footer />
       </div>
     </>
