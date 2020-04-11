@@ -36,6 +36,12 @@ module.exports = {
         path: `${__dirname}/_cms-data`
       },
     },
+    {
+      resolve: `gatsby-plugin-netlify-identity`,
+      options: {
+        url: `https://sharp-saha-d78bb2.netlify.com/`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
