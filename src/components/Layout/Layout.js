@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 // import IdentityModal, { useIdentityContext } from "react-netlify-identity-widget"
@@ -36,6 +36,18 @@ const Layout = ({ children }) => {
   // console.log('name', name)
   // console.log('isLoggedIn', isLoggedIn)
   // console.log('dialog', dialog)
+
+  useEffect(() => {
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  }, []);
 
   return (
     <>
