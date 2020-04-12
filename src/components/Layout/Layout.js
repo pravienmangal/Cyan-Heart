@@ -5,11 +5,11 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-// import IdentityModal, { useIdentityContext } from "react-netlify-identity-widget"
-// import "react-netlify-identity-widget/styles.css" // delete if you want to bring your own CSS
+import IdentityModal, { useIdentityContext } from "react-netlify-identity-widget"
+import "react-netlify-identity-widget/styles.css" // delete if you want to bring your own CSS
 
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
@@ -25,36 +25,37 @@ const Layout = ({ children }) => {
     }
   `)
 
-  // const identity = useIdentityContext()
-  // const [dialog, setDialog] = useState(false)
-  // const name =
-  //   (identity && identity.user && identity.user.user_metadata && identity.user.user_metadata.name) || "NoName"
+  const identity = useIdentityContext()
+  const [dialog, setDialog] = useState(false)
+  const name =
+    (identity && identity.user && identity.user.user_metadata && identity.user.user_metadata.name) || "NoName"
 
-  // console.log('identity', identity)
-  // const isLoggedIn = identity && identity.isLoggedIn
+  console.log('identity', identity)
+  const isLoggedIn = identity && identity.isLoggedIn
 
-  // console.log('name', name)
-  // console.log('isLoggedIn', isLoggedIn)
-  // console.log('dialog', dialog)
+  // useEffect(() => {
+  //   if (identity) {
+  //     window.netlifyIdentity.on("init", user => {
+  //       if (!user) {
+  //         window.netlifyIdentity.on("login", () => {
+  //           document.location.href = "/admin/";
+  //         });
+  //       }
+  //     });
+  //   }
+  //   console.log('Window identity', window.netlifyIdentity);
+  // }, []);
 
-  useEffect(() => {
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  }, []);
+  console.log('identity', identity);
+  console.log('name', name);
+  console.log('isLoggedIn', isLoggedIn);
 
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div>
         <main>{children}</main>
-        {/* <IdentityModal showDialog={dialog} onCloseDialog={() => setDialog(false)} /> */}
+        <IdentityModal showDialog={dialog} onCloseDialog={() => setDialog(false)} />
         <Footer />
       </div>
     </>
