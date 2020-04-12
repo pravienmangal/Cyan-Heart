@@ -11,9 +11,10 @@ import DuoBox from '../components/DuoBox/DuoBox'
 import bannerImage from '../images/banner-1.png';
 import cprImage from '../images/cpr-2.jpg'
 import SpecialistList from '../tempContent/SpecialistList'
+import { graphql } from 'gatsby'
 
-const IndexPage = () => {
-  const bannerTitle = `Cyan Heart's aim is to deliver Best quality First Aid training for all to spread the "Life Saving Knowledge and Skill" to everyone.`;
+const IndexPage = ({ data }) => {
+  // const bannerTitle = `Cyan Heart's aim is to deliver Best quality First Aid training for all to spread the "Life Saving Knowledge and Skill" to everyone.`;
   const linkTitle = 'About Cyan Heart';
   const introTitle = 'We always deliver best quality First Aid training for all';
   const introDesc = `Our aimis to deliver Best quality First Aid training for all to spread the "Life Saving Knowledge and Skill" to everyone. We aim to fulfil our client's First Aid training requirement to the best.`;
@@ -48,12 +49,14 @@ const IndexPage = () => {
     }
   };
 
+  console.log('data', data)
+  const bannerData = data.Home.nodes[0]
   return (
     <Layout>
       <SEO title="Home" />
       <Banner
         bannerImage={bannerImage}
-        title={bannerTitle}
+        title={bannerData.bannerTitle}
         linkName={linkTitle}
         link="/about-us"
       />
@@ -83,3 +86,13 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const query = graphql`
+  {
+    Home: allHomePageJson(
+      filter: { name: { eq: "Banner Title" } }
+    ) {
+      nodes { bannerTitle }
+    }
+  }
+`
