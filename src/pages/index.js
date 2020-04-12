@@ -50,13 +50,13 @@ const IndexPage = ({ data }) => {
   };
 
   console.log('data', data)
-  const bannerData = data.Home.nodes[0]
+  const bannerData = data.Banner.nodes[0]
   return (
     <Layout>
       <SEO title="Home" />
       <Banner
         bannerImage={bannerImage}
-        title={bannerData.bannerTitle}
+        title={bannerData.title}
         linkName={linkTitle}
         link="/about-us"
       />
@@ -89,10 +89,10 @@ export default IndexPage
 
 export const query = graphql`
   {
-    Home: allHomePageJson(
+    Banner: allHomePageJson(
       filter: { name: { eq: "Banner Title" } }
     ) {
-      nodes { bannerTitle }
+      nodes { title }
     }
   }
 `
