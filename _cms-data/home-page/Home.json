@@ -10,6 +10,12 @@
     "AED Training"
   ],
   "specialisedImage": "https://www.alertum.fi/wp-content/uploads/2019/11/Elvytyskoulutus-low-res.jpg",
-  "name": "Home Page Details",
-  "specialisedIMage": "assets/cpr-2.jpg"
+  "specialisedIMage": "assets/cpr-2.jpg",
+  "quote1": "Quote 1",
+  "author1": "Author 1",
+  "quote2": "Quote 2",
+  "author2": "Author 2",
+  "quote3": "Quote 3",
+  "author3": "Author 3",
+  "name": "Home Page Details"
 }

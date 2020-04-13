@@ -15,24 +15,6 @@ const IndexPage = ({ data }) => {
   const linkTitle = 'About Cyan Heart';
   const textImageTitle = 'We Specialized in delivering';
 
-  const quotes = [
-    {
-      id: 1,
-      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id mi facilisis, fringilla tortor et, eleifend nibh ullamcorper bibendum diam, non tempor purus suscipit nec.",
-      author: "Cyan Heart Client"
-    },
-    {
-      id: 2,
-      quote: "One more quote by a random person is here",
-      author: "Random person"
-    },
-    {
-      id: 3,
-      quote: "Lots of line in this no sense made quotation by a very loyal client who wrote this just to take their name in to this colorful slide",
-      author: "Third person"
-    }
-  ];
-
   const renderColorName = i => {
     switch (i) {
       case 0:
@@ -46,6 +28,25 @@ const IndexPage = ({ data }) => {
 
   console.log('data', data)
   const homeData = data.Banner.nodes[0]
+
+  const quotes = [
+    {
+      id: 1,
+      quote: homeData.quote1,
+      author: homeData.author1
+    },
+    {
+      id: 2,
+      quote: homeData.quote2,
+      author: homeData.author2
+    },
+    {
+      id: 3,
+      quote: homeData.quote3,
+      author: homeData.author3
+    }
+  ];
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -93,7 +94,13 @@ export const query = graphql`
         introTitle,
         introDescription,
         specialisedList,
-        specialisedImage
+        specialisedImage,
+        quote1,
+        author1,
+        quote2,
+        author2,
+        quote3,
+        author3,
       }
     }
   }
