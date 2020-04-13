@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const SpecialistList = ({ data }) => {
   return (
     <ul>
-      {data.map(list => {
+      {data && data.map(list => {
         return (
           <li key={list}>{list}</li>
         );
