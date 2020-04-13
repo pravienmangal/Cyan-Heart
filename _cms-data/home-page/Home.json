@@ -5,8 +5,11 @@
   "introDescription": "Our aim is to deliver Best quality First Aid training for all to spread the \"Life Saving Knowledge and Skill\" to everyone. We aim to fulfil our client's First Aid training requirement to the best.",
   "specialisedList": [
     "First Aid at Work (FAW)",
-    "Requalification FAW"
+    "Requalification FAW",
+    "Emergency FAW",
+    "AED Training"
   ],
   "specialisedImage": "https://www.alertum.fi/wp-content/uploads/2019/11/Elvytyskoulutus-low-res.jpg",
-  "name": "Home Page Details"
+  "name": "Home Page Details",
+  "specialisedIMage": "assets/cpr-2.jpg"
 }
