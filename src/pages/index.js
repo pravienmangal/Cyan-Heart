@@ -8,7 +8,6 @@ import Intro from '../components/Intro/Intro'
 import Carousel from '../components/Carousel/Carousel'
 import Blockquote from '../components/BlockQuotes/Blockquotes'
 import DuoBox from '../components/DuoBox/DuoBox'
-import cprImage from '../images/cpr-2.jpg'
 import SpecialistList from '../tempContent/SpecialistList'
 import { graphql } from 'gatsby'
 
@@ -62,9 +61,9 @@ const IndexPage = ({ data }) => {
       />
       <DuoBox
         title={textImageTitle}
-        image={cprImage}
+        image={homeData.specialisedImage}
       >
-        <SpecialistList />
+        <SpecialistList data={homeData.specialisedList} />
       </DuoBox>
       <div className="carousel-container">
         <Carousel>
@@ -92,7 +91,9 @@ export const query = graphql`
         bannerTitle,
         bannerImage,
         introTitle,
-        introDescription
+        introDescription,
+        specialisedList,
+        specialisedImage
       }
     }
   }

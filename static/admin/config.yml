@@ -16,4 +16,7 @@ collections:
       - { name: bannerImage, label: Banner image, widget: image, required: true }
       - { name: introTitle, label: Intro title, widget: string, requires: true }
       - { name: introDescription, label: Intro description, widget: string, requires: true }
+      - { name: specialisedList, label: Specialised in, widget: list, requires: true }
+      - { name: specialisedIMage, label: Specialised image, widget: image, requires: true }
+
       
