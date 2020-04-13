@@ -8,15 +8,12 @@ import Intro from '../components/Intro/Intro'
 import Carousel from '../components/Carousel/Carousel'
 import Blockquote from '../components/BlockQuotes/Blockquotes'
 import DuoBox from '../components/DuoBox/DuoBox'
-// import bannerImage from '../images/banner-1.png';
 import cprImage from '../images/cpr-2.jpg'
 import SpecialistList from '../tempContent/SpecialistList'
 import { graphql } from 'gatsby'
 
 const IndexPage = ({ data }) => {
   const linkTitle = 'About Cyan Heart';
-  const introTitle = 'We always deliver best quality First Aid training for all';
-  const introDesc = `Our aimis to deliver Best quality First Aid training for all to spread the "Life Saving Knowledge and Skill" to everyone. We aim to fulfil our client's First Aid training requirement to the best.`;
   const textImageTitle = 'We Specialized in delivering';
 
   const quotes = [
@@ -50,6 +47,7 @@ const IndexPage = ({ data }) => {
 
   console.log('data', data)
   const bannerData = data.Banner.nodes[0]
+  const introData = data.Intro.nodes[0]
   return (
     <Layout>
       <SEO title="Home" />
@@ -60,8 +58,8 @@ const IndexPage = ({ data }) => {
         link="/about-us"
       />
       <Intro
-        title={introTitle}
-        description={introDesc}
+        title={introData.title}
+        description={introData.description}
       />
       <DuoBox
         title={textImageTitle}
@@ -94,6 +92,14 @@ export const query = graphql`
       nodes {
         title,
         image
+      }
+    }
+    Intro: allHomePageJson(
+      filter: { name: { eq: "Intro Details" } }
+    ) {
+      nodes {
+        title,
+        description
       }
     }
   }
