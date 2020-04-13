@@ -9,7 +9,7 @@ collections:
     format: json
     label: Home Page
     folder: _cms-data/home-page
-    create: false
+    create: true
     identifier_field: name
     fields:
       - { name: title, label: Banner title, widget: string, required: true }
