@@ -8,13 +8,12 @@ import Intro from '../components/Intro/Intro'
 import Carousel from '../components/Carousel/Carousel'
 import Blockquote from '../components/BlockQuotes/Blockquotes'
 import DuoBox from '../components/DuoBox/DuoBox'
-import bannerImage from '../images/banner-1.png';
+// import bannerImage from '../images/banner-1.png';
 import cprImage from '../images/cpr-2.jpg'
 import SpecialistList from '../tempContent/SpecialistList'
 import { graphql } from 'gatsby'
 
 const IndexPage = ({ data }) => {
-  // const bannerTitle = `Cyan Heart's aim is to deliver Best quality First Aid training for all to spread the "Life Saving Knowledge and Skill" to everyone.`;
   const linkTitle = 'About Cyan Heart';
   const introTitle = 'We always deliver best quality First Aid training for all';
   const introDesc = `Our aimis to deliver Best quality First Aid training for all to spread the "Life Saving Knowledge and Skill" to everyone. We aim to fulfil our client's First Aid training requirement to the best.`;
@@ -55,7 +54,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home" />
       <Banner
-        bannerImage={bannerImage}
+        bannerImage={bannerData.image}
         title={bannerData.title}
         linkName={linkTitle}
         link="/about-us"
@@ -90,9 +89,12 @@ export default IndexPage
 export const query = graphql`
   {
     Banner: allHomePageJson(
-      filter: { name: { eq: "Banner Title" } }
+      filter: { name: { eq: "Banner Details" } }
     ) {
-      nodes { title }
+      nodes {
+        title,
+        image
+      }
     }
   }
 `
