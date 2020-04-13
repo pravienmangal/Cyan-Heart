@@ -12,8 +12,8 @@ collections:
     create: true
     identifier_field: name
     fields:
-      - { name: title, label: Banner title, widget: string, required: true }
-      - { name: image, label: Banner image, widget: image, required: true }
+      - { name: bannerTitle, label: Banner title, widget: string, required: true }
+      - { name: bannerImage, label: Banner image, widget: image, required: true }
       - { name: introTitle, label: Intro title, widget: string, requires: true }
-      - { name: description, label: Intro description, widget: string, requires: true }
+      - { name: introDescription, label: Intro description, widget: string, requires: true }
       

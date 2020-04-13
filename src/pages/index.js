@@ -46,20 +46,19 @@ const IndexPage = ({ data }) => {
   };
 
   console.log('data', data)
-  const bannerData = data.Banner.nodes[0]
-  const introData = data.Intro.nodes[0]
+  const homeData = data.Banner.nodes[0]
   return (
     <Layout>
       <SEO title="Home" />
       <Banner
-        bannerImage={bannerData.image}
-        title={bannerData.title}
+        bannerImage={homeData.bannerImage}
+        title={homeData.bannerTitle}
         linkName={linkTitle}
         link="/about-us"
       />
       <Intro
-        title={introData.introTitle}
-        description={introData.description}
+        title={homeData.introTitle}
+        description={homeData.introDescription}
       />
       <DuoBox
         title={textImageTitle}
@@ -87,19 +86,13 @@ export default IndexPage
 export const query = graphql`
   {
     Banner: allHomePageJson(
-      filter: { name: { eq: "Banner Details" } }
+      filter: { name: { eq: "Home Page Details" } }
     ) {
       nodes {
-        title,
-        image
-      }
-    }
-    Intro: allHomePageJson(
-      filter: { name: { eq: "Intro Details" } }
-    ) {
-      nodes {
+        bannerTitle,
+        bannerImage,
         introTitle,
-        description
+        introDescription
       }
     }
   }
