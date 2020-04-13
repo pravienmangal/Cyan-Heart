@@ -22,7 +22,7 @@ collections:
       - { name: author1, label: Author 1, widget: string, requires: true }
       - { name: quote2, label: Quote 2, widget: string, requires: true }
       - { name: author2, label: Author 2, widget: string, requires: true }
-      - { name: quote1, label: Quote 3, widget: string, requires: true }
-      - { name: author1, label: Author 3, widget: string, requires: true }
+      - { name: quote3, label: Quote 3, widget: string, requires: true }
+      - { name: author3, label: Author 3, widget: string, requires: true }
 
       
