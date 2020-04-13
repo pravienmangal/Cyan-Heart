@@ -58,7 +58,7 @@ const IndexPage = ({ data }) => {
         link="/about-us"
       />
       <Intro
-        title={introData.title}
+        title={introData.introTitle}
         description={introData.description}
       />
       <DuoBox
@@ -98,7 +98,7 @@ export const query = graphql`
       filter: { name: { eq: "Intro Details" } }
     ) {
       nodes {
-        title,
+        introTitle,
         description
       }
     }
