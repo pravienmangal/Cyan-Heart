@@ -1,21 +1,21 @@
 {
-  "bannerTitle": "Cyan Heart's aim is to deliver Best quality First Aid training for all to spread the \"Life Saving Knowledge and Skill\" to everyone.",
-  "bannerImage": "assets/banner-1.png",
-  "introTitle": "We always deliver best quality First Aid training for all",
-  "introDescription": "Our aim is to deliver Best quality First Aid training for all to spread the \"Life Saving Knowledge and Skill\" to everyone. We aim to fulfil our client's First Aid training requirement to the best.",
   "specialisedList": [
     "First Aid at Work (FAW)",
     "Requalification FAW",
     "Emergency FAW",
     "AED Training"
   ],
-  "specialisedImage": "https://www.alertum.fi/wp-content/uploads/2019/11/Elvytyskoulutus-low-res.jpg",
-  "specialisedIMage": "assets/cpr-2.jpg",
-  "quote1": "Quote 1",
-  "author1": "Author 1",
-  "quote2": "Quote 2",
+  "author1": "Cyan Heart Client",
   "author2": "Author 2",
-  "quote3": "Quote 3",
   "author3": "Author 3",
-  "name": "Home Page Details"
+  "name": "Home Page Details",
+  "bannerTitle": "Cyan Heart's aim is to deliver Best quality First Aid training for all to spread the \"Life Saving Knowledge and Skill\" to everyone.",
+  "introTitle": "We always deliver best quality First Aid training for all",
+  "bannerImage": "assets/banner-1.png",
+  "introDescription": "Our aim is to deliver Best quality First Aid training for all to spread the \"Life Saving Knowledge and Skill\" to everyone. We aim to fulfil our client's First Aid training requirement to the best.",
+  "quote1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id mi facilisis, fringilla tortor et, eleifend nibh ullamcorper bibendum diam, non tempor purus suscipit nec",
+  "quote2": "One more quote by a random person is here",
+  "quote3": "Lots of line in this no sense made quotation by a very loyal client who wrote this just to take their name in to this colorful slide",
+  "specialisedImage": "https://www.alertum.fi/wp-content/uploads/2019/11/Elvytyskoulutus-low-res.jpg",
+  "specialisedIMage": "assets/cpr-2.jpg"
 }
